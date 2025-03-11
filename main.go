@@ -15,7 +15,25 @@ func main() {
 
 	for {
 		var guess int
-		fmt.Scan(&guess)
+		fmt.Print("Digite seu palpite: ")
+
+		// Verificando se a entrada é um número válido
+		_, err := fmt.Scan(&guess)
+		if err != nil {
+			// Limpar o buffer de entrada para evitar loop infinito
+			var discard string
+			fmt.Scanln(&discard)
+
+			fmt.Println("Erro: Por favor, digite apenas números!")
+			continue
+		}
+
+		// Verificando se o número está no intervalo válido
+		if guess < 0 || guess > 100 {
+			fmt.Println("Por favor, digite um número entre 0 e 100!")
+			continue
+		}
+
 		tentativas++
 
 		if guess == answer {
