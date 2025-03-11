@@ -1,0 +1,22 @@
+# Binários compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+
+# Arquivos de teste
+*.test
+*.out
+
+# Arquivos de log
+*.log
+
+# Diretórios específicos do Go
+/vendor/
+/Godeps/
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db 
